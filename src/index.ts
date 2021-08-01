@@ -3,7 +3,7 @@ export class SearchOptimiser<type> {
     private arr: Array<type> = [];
 
     public get value(): Array<type> {
-        return this.value;
+        return this.arr;
     }
 
     public set value(arr: Array<type>) {
@@ -29,7 +29,10 @@ export class SearchOptimiser<type> {
     public binarySearchIndex(l: number, r: number, value: type): number {
         if (l > r)
             return -1;
-        const mid = l + (r - l) / 2;
+        const mid = l + Math.floor((r - l) / 2);
+        console.log('l = ', l);
+        console.log('r = ', r);
+        console.log('mid = ', mid);
         const comparisionResult = this.comparator(value, this.value[mid]);
         if (comparisionResult == 0)
             return mid;
@@ -39,7 +42,9 @@ export class SearchOptimiser<type> {
     }
 
     public find(value: type) {
+        console.log('arr = ', this.value);
         const index = this.binarySearchIndex(0, this.value.length - 1, value);
+        console.log("index = ", index);
         return this.value[index];
     }
 
