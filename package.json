@@ -1,0 +1,21 @@
+{
+  "name": "search-optmized",
+  "version": "1.0.0",
+  "description": "Optmized regular repeated array searches",
+  "main": "lib/index.js",
+  "types": "lib",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p ."
+  },
+  "keywords": [
+    "Search",
+    "Search-Optimization",
+    "Optimization"
+  ],
+  "author": "Aditya Kumar",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
+}
