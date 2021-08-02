@@ -15,6 +15,7 @@
   ],
   "author": "Aditya Kumar",
   "license": "MIT",
+  "repository": "https://github.com/kumardot93/search-optimized.git",
   "devDependencies": {
     "typescript": "^4.3.5"
   }
