@@ -2,7 +2,7 @@
 
 > Optmized regular repeated array searches
 
-[![NPM Version][npm-image]][npm-url]
+[![npm version](https://badge.fury.io/js/search-optimized.svg)](https://badge.fury.io/js/search-optimized)
 
 ## Install
 
@@ -85,5 +85,3 @@ const result = arrSearchOptimiser.find({id: 12}); // argument is a object that c
 
 [MIT](https://github.com/kumardot93/search-optimized/blob/master/LICENSE) © Aditya Kumar
 
-[npm-image]: https://img.shields.io/npm/v/live-xxx.svg
-[npm-url]: https://www.npmjs.com/package/search-optimized
