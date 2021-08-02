@@ -6,10 +6,10 @@ let studentList = [];
 function initilizeList() {
     studentList = [];
     studentSectionList = [];
-    for ( let i = 5000; i >= 1; i-- ) {
+    for ( let i = 1; i <= 5000; i++ ) {
         studentSectionList.push( { id: i, parentStudent: i } );
     }
-    for ( let i = 5000; i >= 1; i-- ) {
+    for ( let i = 1; i <= 5000; i++ ) {
         studentList.push( { id: i } );
     }
     // console.log( 'ss: ', studentSectionList );
