@@ -3,6 +3,8 @@
 > Optmized regular repeated array searches
 
 [![npm version](https://badge.fury.io/js/search-optimized.svg)](https://badge.fury.io/js/search-optimized)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/search-optimized)
+![NPM](https://img.shields.io/npm/l/search-optimized)
 
 ## Install
 

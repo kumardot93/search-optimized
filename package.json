@@ -1,6 +1,6 @@
 {
   "name": "search-optimized",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "Optmized regular repeated array searches",
   "main": "lib/index.js",
   "types": "lib",
