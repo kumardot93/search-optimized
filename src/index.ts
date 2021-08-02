@@ -1,5 +1,5 @@
-type ComparatorType<type> = (a: type, b: type) => number;
-export class SearchOptimiser<type> {
+type ComparatorType<type> = (a: Partial<type>, b: Partial<type>) => number;
+export class SearchOptimiserBinary<type> {
     private arr: Array<type> = [];
 
     public get value(): Array<type> {
@@ -11,7 +11,7 @@ export class SearchOptimiser<type> {
         this.arr.sort(this.comparator);
     }
 
-    public comparator: ComparatorType<type> = (a: type, b: type) => {
+    public comparator: ComparatorType<type> = (a: Partial<type>, b: Partial<type>) => {
         if (a < b)
             return -1;
         else if (a == b)
@@ -20,19 +20,16 @@ export class SearchOptimiser<type> {
             return 1;
     };
 
-    public constructor(arr: Array<type> = [], comparator: (a: type, b: type) => number) {
+    public constructor(arr: Array<type> = [], comparator: (a: Partial<type>, b: Partial<type>) => number) {
         if (comparator)
             this.comparator = comparator;
         this.value = arr;
     }
 
-    public binarySearchIndex(l: number, r: number, value: type): number {
+    public binarySearchIndex(l: number, r: number, value: Partial<type>): number {
         if (l > r)
             return -1;
         const mid = l + Math.floor((r - l) / 2);
-        console.log('l = ', l);
-        console.log('r = ', r);
-        console.log('mid = ', mid);
         const comparisionResult = this.comparator(value, this.value[mid]);
         if (comparisionResult == 0)
             return mid;
@@ -41,11 +38,31 @@ export class SearchOptimiser<type> {
         else return this.binarySearchIndex(mid + 1, r, value);
     }
 
-    public find(value: type) {
-        console.log('arr = ', this.value);
+    public find(value: Partial<type>): type {
         const index = this.binarySearchIndex(0, this.value.length - 1, value);
-        console.log("index = ", index);
         return this.value[index];
+    }
+
+};
+
+type optimizedDictType<type> = { [key: string]: type; };
+
+export class SearchOptimiserDict<type> {
+    private dict: optimizedDictType<type> = {};
+    private keyName: string | number;
+
+
+    public constructor(arr: Array<type> = [], keyName: string | number) {
+        this.keyName = keyName;
+        arr.forEach((item: any) => {
+            const key = item[this.keyName].toString();
+            this.dict[key] = item;
+        });
+    }
+
+    public find(value: any): type {
+        const key = value[this.keyName].toString();
+        return this.dict[key];
     }
 
 };
